@@ -95,3 +95,14 @@ Create A Global Wiki (WikiHub)
     of the global wiki.
 
 
+Managing Wiki Submodules
+========================
+
+Updating Submodules
+-------------------
+
+To update the wiki submodules to the latest commit of their current branches, run ``git submodule update --remote``.
+If any updates have occured, they will be visible when running ``git diff``. This change should be committed
+to the project.
+
+
