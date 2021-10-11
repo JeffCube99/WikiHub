@@ -118,6 +118,19 @@ Once the project is created, you will need to update its configurations:
 Make the Template Your Own
 --------------------------
 
+..  note::
+
+    If you decided to create a new github account when creating your project, remember to adjust your git config settings
+    so any changes you commit to the repository are attached to the new account. For example:
+
+    ..  code-block:: bash
+
+        # set local git username
+        $ git config --local user.name "JeffCube99"
+
+        # set local git user email
+        $ git config --local user.email jeffcube99@gmail.com
+
 If you have followed the above instructions and built the documentation from the
 `Read The Docs GitHub template <https://github.com/astrojuanlu/tutorial-template/>`_ you can follow these steps to
 start making the project your own by doing the following:
