@@ -87,6 +87,7 @@ Once the project is created, you will need to update its configurations:
 #.  Click on the **Advanced Settings** section on the left hand side of the settings page. Check the
     **Build pull requests for this project** box. This means that Read the Docs will build the documents
     when a pull request is open and when a new commit has been pushed.
+#.  Save the settings by click the **Save** button at the bottom of the page.
 
 ..  note::
 
@@ -113,8 +114,6 @@ Once the project is created, you will need to update its configurations:
         If bullets are not rendering in your locally generated document you may need to install docutils by running
         ``conda install docutils=0.16`` from the terminal.
         *   `Link to Stack Overflow Issue <https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file>`_
-
-#.  Save the settings by click the **Save** button at the bottom of the page.
 
 Make the Template Your Own
 --------------------------
