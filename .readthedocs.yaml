@@ -9,3 +9,8 @@ version: 2
 submodules:
   include: all
   recursive: true
+
+# Python Requirements
+python:
+   install:
+   - requirements: docs/requirements.txt

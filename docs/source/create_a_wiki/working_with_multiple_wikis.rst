@@ -46,6 +46,11 @@ Create A Global Wiki (WikiHub)
           include: all
           recursive: true
 
+        # Python Requirements
+        python:
+           install:
+           - requirements: docs/requirements.txt
+
     With this file, we inform Read the Docs to include submodules we add to our project. These submodules
     will contain other wiki's we wish to reference.
 #.  Afterwards we add submodules we want to include in our global wiki:
