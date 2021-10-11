@@ -1,0 +1,3 @@
+[submodule "GitWiki"]
+	path = GitWiki
+	url = https://github.com/JeffCube99/GitWiki.git

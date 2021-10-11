@@ -56,8 +56,8 @@ Starting Your Repository From A Template
 #.  Set it's visibility to **Public**
 #.  Click the **Create repository from template** button.
 
-Setting Repository up with ReadTheDocs
---------------------------------------
+Setting Repository up with Read The Docs
+----------------------------------------
 
 #.  Go to `readthedocs.org <https://readthedocs.org/>`_ and sign in
 #.  Go to your dashboard and click on the **Import a Project** button
@@ -87,6 +87,7 @@ Once the project is created, you will need to update its configurations:
 #.  Click on the **Advanced Settings** section on the left hand side of the settings page. Check the
     **Build pull requests for this project** box. This means that Read the Docs will build the documents
     when a pull request is open and when a new commit has been pushed.
+#.  Save the settings by click the **Save** button at the bottom of the page.
 
 ..  note::
 
@@ -114,10 +115,21 @@ Once the project is created, you will need to update its configurations:
         ``conda install docutils=0.16`` from the terminal.
         *   `Link to Stack Overflow Issue <https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file>`_
 
-#.  Save the settings by click the **Save** button at the bottom of the page.
-
 Make the Template Your Own
 --------------------------
+
+..  note::
+
+    If you decided to create a new github account when creating your project, remember to adjust your git config settings
+    so any changes you commit to the repository are attached to the new account. For example:
+
+    ..  code-block:: bash
+
+        # set local git username
+        $ git config --local user.name "JeffCube99"
+
+        # set local git user email
+        $ git config --local user.email jeffcube99@gmail.com
 
 If you have followed the above instructions and built the documentation from the
 `Read The Docs GitHub template <https://github.com/astrojuanlu/tutorial-template/>`_ you can follow these steps to
