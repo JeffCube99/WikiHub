@@ -2,6 +2,9 @@
 How to Create A Local Wiki
 ==========================
 
+..  contents::
+    :local:
+
 Creating a Local Wiki
 =====================
 

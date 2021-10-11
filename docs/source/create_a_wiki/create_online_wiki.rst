@@ -2,10 +2,16 @@
 How to Create A Online Wiki
 ===========================
 
+..  contents::
+    :local:
 
-We will create a Online Wiki by using `Read the Docs <https://readthedocs.org/>`_
-to host our documents online. In our examples we will sign into Read the Docs using
-a `GitHub <https://github.com/>`_ account.
+
+Overview
+========
+
+In our examples we create a Online Wiki by using `Read the Docs <https://readthedocs.org/>`_
+to host our documents online. In our examples we also sign into Read the Docs using
+a `GitHub <https://github.com/>`_ account and create and use repositories with the account.
 
 ..  note::
 
@@ -23,8 +29,9 @@ Test Read The Docs by Loading a Demo Project
     You do not own the template repository, so you cannot make edits to it. If you want to start
     your own documentation see :ref:`Create Your Online Documentation From A Template`.
 
-#.  After you have setup your account for the first time click your profile.
-#.  On your dashboard you should see a link to **Import our own demo project**. Clicking this link will take you to a
+#.  After you have setup your Read the Docs account open your profile.
+#.  If you have no projects, your dashboard should display a link to **Import our own demo project**. Clicking this link
+    will cause Read the Docs to create a demo project and take you to a
     url like ``https://readthedocs.org/projects/<username>-demo/`` which is the new project's overview page.
 #.  From the overview page you can view the generated documentation by clicking on the **View your documentation**
     button. There you will see that the docs are viewable at a url like
