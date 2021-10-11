@@ -66,15 +66,15 @@ Create A Global Wiki (WikiHub)
 #.  Next we will create a new directory related to each of our submodules within ``docs/source/``.
     Within each directory we will create a ``index.rst`` file that has an ``..  include::`` directive with
     a path to the root ``index.rst`` file of the submodule. We also add extra information linking to the
-    wiki's source:
+    wiki's source.:
 
     ..  code-block:: rst
 
         # inside of docs/source/GitWiki/index.rst
 
-        =======
+        #######
         GitWiki
-        =======
+        #######
 
         Wiki Source: https://gitwiki.readthedocs.io/en/latest/
 
