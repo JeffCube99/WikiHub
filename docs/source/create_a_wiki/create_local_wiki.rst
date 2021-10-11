@@ -6,7 +6,7 @@ Creating a Local Wiki
 =====================
 
 There are many different ways to create your own wiki. The following examples will
-create documentation using `sphinx <https://www.sphinx-doc.org/en/master/index.html>`_ installed
+create a wiki using `sphinx <https://www.sphinx-doc.org/en/master/index.html>`_ installed
 inside a `conda <https://docs.conda.io/en/latest/>`_ environment. This can be done
 from the terminal or by using `PyCharm <https://www.jetbrains.com/pycharm/>`_:
 
@@ -98,6 +98,7 @@ from the terminal or by using `PyCharm <https://www.jetbrains.com/pycharm/>`_:
 
                         No Documentation Avaliable Yet
 
+.. _Viewing A Local Wiki:
 
 Viewing A Local Wiki
 ====================
