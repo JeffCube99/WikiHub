@@ -56,8 +56,8 @@ Starting Your Repository From A Template
 #.  Set it's visibility to **Public**
 #.  Click the **Create repository from template** button.
 
-Setting Repository up with ReadTheDocs
---------------------------------------
+Setting Repository up with Read The Docs
+----------------------------------------
 
 #.  Go to `readthedocs.org <https://readthedocs.org/>`_ and sign in
 #.  Go to your dashboard and click on the **Import a Project** button
