@@ -2,6 +2,9 @@
 Working With Multiple Wikis
 ===========================
 
+..  contents::
+    :local:
+
 Background
 ==========
 
