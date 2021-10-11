@@ -2,12 +2,13 @@
 How to Create A Local Wiki
 ==========================
 
-To create your own wiki, do the following:
+Creating a Local Wiki
+=====================
 
-#.  Create a new folder / directory to house your wiki. (For our example we will call the directory ``wiki_test``)
-#.  Initialize a `conda <https://docs.conda.io/en/latest/>`_ environment with a recent
-    version of`python3 <https://www.python.org/>`_. (For our example we will be using python 3.8)
-    This can be done from the terminal or using `PyCharm <https://www.jetbrains.com/pycharm/>`_.
+There are many different ways to create your own wiki. The following examples will
+create documentation using `sphinx <https://www.sphinx-doc.org/en/master/index.html>`_ installed
+inside a `conda <https://docs.conda.io/en/latest/>`_ environment. This can be done
+from the terminal or by using `PyCharm <https://www.jetbrains.com/pycharm/>`_:
 
     ..  tabs::
 
@@ -20,7 +21,8 @@ To create your own wiki, do the following:
 
                     ..  code-block:: bash
 
-                        # Navigate to your directory that will house your wiki
+                        # Create and navigate to a directory that will house your wiki
+                        $ mkdir wiki_test
                         $ cd wiki_test/
 
                         # Create a new conda environment
@@ -54,9 +56,31 @@ To create your own wiki, do the following:
 
                 ..  group-tab:: PyCharm
 
-                    ..  error::
+                    #.  With PyCharm open select **File > New Project...**
+                    #.  Choose your project location. (e.g. ``C:\PycharmProjects\test_wiki``)
+                    #.  Under **Python Interpreter** create a new environment using Conda
+                    #.  Select your python version (For this example we will use ``3.8``)
+                    #.  Click the **Create** button to create your project.
+                    #.  Select the terminal tab at the bottom of the PyCharm window. From the terminal run the followng:
 
-                        No Documentation Avaliable Yet
+                    ..  code-block:: bash
+
+                        # Install Sphinx.
+                        # During this process conda will ask for your permission you to proceed (``Proceed ([y]/n)?``).
+                        # To continue just type ``y``
+                        $ conda install sphinx
+
+                        # Initialize a default sphinx project by running the command ``sphinx-quickstart``
+                        # Follow the instructions in the command prompt. You can accept all of the defaults
+                        # (displayed to you within brackets) but you still have to specify Project and Author names.
+                        $ sphinx-quickstart
+
+                        # Build HTML docs inside the newly created ``_build`` directory.
+                        $ make html
+
+                    *   From this point you can navigate to ``_build/html/index.html`` and open index.html
+                        from PyCharm or in your browser to view your newly created documentation.
+                    *   You can now start writing documentation inside of your base directory (``wiki_test``).
 
         ..  group-tab:: Mac
 
@@ -75,26 +99,29 @@ To create your own wiki, do the following:
                         No Documentation Avaliable Yet
 
 
-=======================
-Viewing Your Local Wiki
-=======================
+Viewing A Local Wiki
+====================
 
-Navigating to your local files and opening them in your browser is sufficient to see your documentation,
-however the search results displayed by sphinx will not be as comprehensive when running on browsers like chrome.
-There, the search results listed will only include document names. This differs from the search results you get
-when searching through sphinx documentation online which includes the snippet of text from the document that contain
-the words you search. When you open the console to investigate the issue you may see errors like the following:
+After you create HTML files from your documentation, you could simply select them from your file explorer / finder window and open them
+in your browser. However when using sphinx's search functionality the results may not be comprehensive, with only document
+names being listed in the search results page. This differs from the search results you see
+when searching through sphinx documentation hosted online, which includes snippets of text from the documents that contain
+the words you search. This difference occurs because browsers limit displaying the contents of local
+files in the sphinx search. If you happen to open the console in chrome you may see errors like the following:
 
 ..  error::
 
-        Access to XMLHttpRequest at
-        'file:///<path to index.html>'
-        from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for
-        protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
+    ..  code-block::
+
+            Access to XMLHttpRequest at
+            'file:///<path to index.html>'
+            from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for
+            protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
 
 To avoid this error and get a more verbose result you can start a
 `Simple Local HTTP server <https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server>`_
-or piggyback off PyCharm's built in ability to display html files in the browser
+or piggyback off PyCharm's built in ability to display html files in the browser. Guides for both are
+below:
 
 ..  tabs::
 
@@ -125,9 +152,14 @@ or piggyback off PyCharm's built in ability to display html files in the browser
 
                 ..  group-tab:: PyCharm
 
-                    ..  error::
+                    To learn more check out `PyCharms built-in HTML preview <https://www.jetbrains.com/help/pycharm/editing-html-files.html#ws_html_preview_output_built_in_browser>`_
 
-                        No Documentation Avaliable Yet
+                    *   Open a ``.html`` file built by your project directory (e.g. ``test_wiki/_build/html/index.html``)
+                    *   Move your mouse inside the file window. In the upper left hand part of the window you
+                        should be able to see icons for different browsers. Select a browser of your choice
+                        and pycharm will open the page for you in the browser.
+                    *   Alternatively you can select **View > Open in Browser** and select the browser
+                        of your choice.
 
     ..  group-tab:: Mac
 
@@ -144,18 +176,3 @@ or piggyback off PyCharm's built in ability to display html files in the browser
                 ..  error::
 
                     No Documentation Avaliable Yet
-
-..
-    ..  tab:: Terminal
-
-        #.  Run ``conda create -n documentation python=3.8``
-
-    ..  tab:: Pycharm on Windows
-
-        #.  Navigate to **File > Settings > Project > Python Interpreter**.
-        #.  Click the cog icon in the upper right side of the window and select **Add..**
-        #.  Select the **Conda Environment** section on the left side of the window
-        #.  Select **New Environment**.
-        #.  Make sure to select Python version **3.8**.
-        #.  Click **OK**
-
