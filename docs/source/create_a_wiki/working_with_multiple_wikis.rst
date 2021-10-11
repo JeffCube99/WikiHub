@@ -53,7 +53,7 @@ Create A Global Wiki (WikiHub)
     ..  code-block:: bash
 
         # git submodule add <project url>
-        $ git submodule add git@github.com:JeffCube99/GitWiki.git
+        $ git submodule add https://github.com/JeffCube99/GitWiki.git
 
 #.  Next we will create a new directory related to each of our submodules within ``docs/source/``.
     Within each directory we will create a ``index.rst`` file that has an ``..  include::`` directive with
