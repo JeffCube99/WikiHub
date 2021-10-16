@@ -26,7 +26,6 @@ Links to Individual Wikis
     :hidden:
 
     create_a_wiki/index
-    GitWiki/index
 
 
 
