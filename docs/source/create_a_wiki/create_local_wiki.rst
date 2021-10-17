@@ -64,7 +64,7 @@ from the terminal or by using `PyCharm <https://www.jetbrains.com/pycharm/>`_:
                     #.  Under **Python Interpreter** create a new environment using Conda
                     #.  Select your python version (For this example we will use ``3.8``)
                     #.  Click the **Create** button to create your project.
-                    #.  Select the terminal tab at the bottom of the PyCharm window. From the terminal run the followng:
+                    #.  Select the terminal emulator at the bottom of the PyCharm window. From the terminal run the followng:
 
                     ..  code-block:: bash
 

@@ -10,99 +10,95 @@ Background
 
 When starting out making a wiki for yourself you may have files for every topic you wanted to cover. You may have
 organized those files into different directories each one containing documents on different topics. If however you
-wanted to publish these wikis online it may be unwise to place them in a wiki as users searching for documents
-from topicA may retrieve documents from topicB that reference topicA.
-Another issue was the managing of changes applied to the different topics. For wikis managed in git, having pull
-requests to a wiki contain additions and subtractions across a variety of different topics may be overwhelming to
-manage / moderate. Because of this we propose a structure where each wiki gets its own repository. This leads to
+wanted to publish all these documents online it may be unwise to place them in a single wiki as users searching for documents
+from topicA may retrieve documents from topicB that make reference to topicA or simply include keywords also used
+by topicA. Another issue that can arise is managing changes to the wiki. For wikis managed in git, one can face pull
+requests containing changes across a variety of different topics. This may become overwhelming to
+manage / moderate.
+
+Because of these issues we propose a structure where each wiki gets its own repository. Additionally there can be
+one wiki that enables users to search across all other wikis for when the need arises. This leads to
 its own issue however, how to manage all of these different repositories. To get a global view of the documentation
 as well as provide a easy way to dip into and edit documentation in any wiki we propose a repository that initializes submodules
 for each of the different wikis. This is the structure we use for WikiHub
 
+
+Search Through Multiple Wikis with A Global Wiki (WikiHub)
+==========================================================
+
 ..  note::
 
-    Credit to David Fischer's
-    `sphinx-with-submodules <https://sphinx-with-submodules.readthedocs.io/en/latest/index.html>`_ project for
-    its ideas on handling submodules within Read the Docs projects.
-
-
-Create A Global Wiki (WikiHub)
-==============================
+    For more information visit `Read The Docs: Subprojects <https://docs.readthedocs.io/en/stable/subprojects.html>`_
 
 #.  We first start by creating a new wiki we can host online with Read the Docs. To do so follow the steps in the section
     :ref:`Create Your Online Documentation From A Template`.
-#.  Next we create a ``.readthedocs.yaml`` file at the root of our new global wiki project. For more information
-    on this configuration file visit https://rtd-docs-single-version.readthedocs.io/config-file/v2.html. Inside the
-    file we add the following:
+#.  Next we navigate to the project dashboard on Read The Docs and click the ⚙ **Admin** button.
+#.  Select **Subprojects** from the sidebar and add your other subprojects (wikis) you want to be able to search through
+    from your global wiki.
+#.  ***May Not Be Necessary**) Navigate back to your project dashboard and rebuild your project by selecting the
+    **Builds** button. Then on the builds page click the **Build Version:** button to rebuild versions of your
+    project.
 
-    ..  code-block:: yaml
+After you follow the above steps you should be able to go to the global wiki's documentation, enter keywords in the
+search bar. And see search results from all of the wikis you included as subprojects.
 
-        # .readthedocs.yaml
-        # Read the Docs configuration file
-        # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
-        # Required
-        version: 2
+Managing Multiple Wikis
+=======================
 
-        # Submodules
-        submodules:
-          include: all
-          recursive: true
+..  note::
 
-        # Python Requirements
-        python:
-           install:
-           - requirements: docs/requirements.txt
+    *   This involves using `PyCharm <https://www.jetbrains.com/pycharm/>`_
+    *   Because we access all wikis from a single PyCharm project, we assume we are using the same version
+        of sphinx and python across all project (e.g. all wikis were setup with Python 3.8)
 
-    With this file, we inform Read the Docs to include submodules we add to our project. These submodules
-    will contain other wikis that we wish to reference.
-#.  Next we add submodules we want to include in our global wiki:
+With each of your wikis contained in different repositories you could simply navigate to each repository when you want
+to add changes. However if you want to have a single place to view and edit wikis across multiple repositories I have
+found the following workflow to work for me:
+
+*   To start we create a new project
+
+    ..  tabs::
+
+        ..  group-tab:: Windows
+
+            #.  With PyCharm open select **File > New Project...**
+            #.  Choose your project location. (e.g. ``C:\PycharmProjects\test_wiki``)
+            #.  Under **Python Interpreter** create a new environment using Conda
+            #.  Select your python version (For this example we will use ``3.8``)
+            #.  Click the **Create** button to create your project.
+
+*   Once the project is created select the terminal emulator at the bottom of the PyCharm window.
+    From the terminal run the followng:
 
     ..  code-block:: bash
 
-        # git submodule add <project url>
-        $ git submodule add https://github.com/JeffCube99/GitWiki.git
+        # Clone each wiki repository
+        $ git clone git@github.com:JeffCube99/WikiHub.git
 
-#.  Next we will create a new directory related to each of our submodules within ``docs/source/``.
-    Within each directory we will create a ``index.rst`` file that has an ``..  include::`` directive with
-    a path to the root ``index.rst`` file of the submodule. We also add extra information linking to the
-    wiki's source.:
+        # Inside ach wiki repository Set your git credentials
+        # (If you contribute to the wikis under a different name and email)
+        $ cd WikiHub
+        $ git config --local user.name "JeffCube99"
+        $ git config --local user.email jeffcube99@gmail.com
+        $ cd ..
 
-    ..  code-block:: rst
+        # Install Sphinx.
+        # During this process conda will ask for your permission you to proceed (``Proceed ([y]/n)?``).
+        # To continue just type ``y``
+        $ conda install sphinx
 
-        # inside of docs/source/GitWiki/index.rst
+        # Install any dependencies of the other wikis.
+        # For example if a wiki uses the "sphinx-rtd-theme" run  $ pip install sphinx-rtd-theme
 
-        #######
-        GitWiki
-        #######
+*   With the project setup you can now manage the branches of your wikis using the git widget
+    at the bottom of the pycharm window:
 
-        Wiki Source: https://gitwiki.readthedocs.io/en/latest/
+    ..  image:: /images/pycharm_git_widget.png
 
-        .. include:: ../../../GitWiki/docs/source/index.rst
-
-#.  Now navigate to your main page ``docs/source/index.rst`` file and add a link to the
-    submodule's index.rst file within the toctree directive:
-
-    ..  code-block:: rst
-
-        ..  toctree::
-            :maxdepth: 2
-            :hidden:
-
-            GitWiki/index
-
-    From this point the submodules documents should be viewable when generating the documents
-    of the global wiki.
-
-
-Managing Wiki Submodules
-========================
-
-Updating Submodules
--------------------
-
-To update the wiki submodules to the latest commit of their current branches, run ``git submodule update --remote``.
-If any updates have occured, they will be visible when running ``git diff``. This change should be committed
-to the project.
-
-
+*   When committing changes using PyCharm's version control window, make sure each commit contains only files
+    from the repository you intend to commit the changes to, otherwise you will create a commit across multiple
+    repositories (with the same commit message as well).
+*   When you want to generate HTML documentation in a wiki. Open the pycharm terminal and navigate to the ``docs``
+    folder in the wiki and run the ``make html`` command. For more instructions on viewing your wiki on a browser
+    see :ref:`Viewing A Local Wiki`.

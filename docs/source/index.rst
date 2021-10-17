@@ -2,8 +2,9 @@
 Welcome to WikiHub
 ==================
 
-**WikiHub** Is a site where you can find links to other useful wikis. You can also use the search bar to
-to search across all wikis referenced by WikiHub.
+**WikiHub** Is a site where you can find links to other useful wikis.
+
+Use the **Search Bar** to to search across all wikis referenced by WikiHub.
 
 .. note::
 
