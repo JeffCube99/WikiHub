@@ -31,7 +31,7 @@ Search Through Multiple Wikis with A Global Wiki (WikiHub)
     For more information visit `Read The Docs: Subprojects <https://docs.readthedocs.io/en/stable/subprojects.html>`_
 
 #.  We first start by creating a new wiki we can host online with Read the Docs. To do so follow the steps in the section
-    :ref:`Create Your Online Documentation From A Template`.
+    :ref:`Create Your Online Wiki From A Template`.
 #.  Next we navigate to the project dashboard on Read The Docs and click the ⚙ **Admin** button.
 #.  Select **Subprojects** from the sidebar and add your other subprojects (wikis) you want to be able to search through
     from your global wiki.
@@ -96,7 +96,17 @@ found the following workflow to work for me:
 
     ..  image:: /images/pycharm_git_widget.png
 
-*   When committing changes using PyCharm's version control window, make sure each commit contains only files
+*   Changes made to files appear within the **Local Changes** tab which is visible when clicking on the Git tab at the
+    bottom of the pycharm window. By default any new changes appear in the active changelist which is named the **Default
+    Changelist**. To better organize your changes you can create a changelist for each wiki by right clicking inside the
+    Local Changes window and select **New Changelist**. When you edit a new file and it appears under the Default Changelist
+    you can then drag it and drop it to one of the wiki changelists you have created. You can see an example of
+    this organization below:
+
+    ..  image:: /images/pycharm_organized_changelists.png
+
+*   When committing changes using PyCharm's version control window, select the changelist you want to commit before
+    clicking the commit button (that looks like a green chechmark). When reviewing the commit make that it contains only
     from the repository you intend to commit the changes to, otherwise you will create a commit across multiple
     repositories (with the same commit message as well).
 *   When you want to generate HTML documentation in a wiki. Open the pycharm terminal and navigate to the ``docs``

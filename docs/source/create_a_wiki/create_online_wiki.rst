@@ -27,7 +27,7 @@ Test Read The Docs by Loading a Demo Project
 
     The following example only has you create a demo project using a `template repository <https://github.com/readthedocs/template.git>`_.
     You do not own the template repository, so you cannot make edits to it. If you want to start
-    your own documentation see :ref:`Create Your Online Documentation From A Template`.
+    your own documentation see :ref:`Create Your Online Wiki From A Template`.
 
 #.  After you have setup your Read the Docs account open your profile.
 #.  If you have no projects, your dashboard should display a link to **Import our own demo project**. Clicking this link
@@ -38,10 +38,10 @@ Test Read The Docs by Loading a Demo Project
     ``https://<username>-demo.readthedocs.io/en/latest/``.
 
 
-.. _Create Your Online Documentation From A Template:
+.. _Create Your Online Wiki From A Template:
 
-Create Your Online Documentation From A Template
-================================================
+Create Your Online Wiki From A Template
+=======================================
 
 If you have not created your own documentation, you can begin by using the template provided by Read The Docs. This
 section is based of the `Getting Started <https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started>`_
@@ -112,8 +112,8 @@ Once the project is created, you will need to update its configurations:
     ..  note::
 
         If bullets are not rendering in your locally generated document you may need to install docutils by running
-        ``conda install docutils=0.16`` from the terminal.
-        *   `Link to Stack Overflow Issue <https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file>`_
+        ``conda install docutils=0.16`` from the terminal
+        (`Link to Stack Overflow Issue <https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file>`_).
 
 Make the Template Your Own
 --------------------------
@@ -160,9 +160,5 @@ start making the project your own by doing the following:
         release = version
 
 #.  Update the contents of ``docs/source/index.rst`` This is the homepage of your documentation.
-#.  Start adding ``.rst`` files and directories of your own to ``docs/source``.
 
-..  note::
-
-    If you want your documentation to support tabs install `sphinx-tabs <https://sphinx-tabs.readthedocs.io/en/latest/>`_
-    Add add sphinx-tabs to requirements.txt at the root of the project or in your docs folder.
+From this point the wiki is now your own. Start adding new ``.rst`` files of your own to ``docs/source``.
