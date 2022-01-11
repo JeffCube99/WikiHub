@@ -11,8 +11,8 @@ Background
 When starting out making a wiki for yourself you may have files for every topic you wanted to cover. You may have
 organized those files into different directories each one containing documents on different topics. If however you
 wanted to publish all these documents online it may be unwise to place them in a single wiki as users searching for documents
-from topicA may retrieve documents from topicB that make reference to topicA or simply include keywords also used
-by topicA. Another issue that can arise is managing changes to the wiki. For wikis managed in git, one can face pull
+from topic_A may retrieve documents from topic_B that make reference to topic_A or simply include keywords also used
+by topic_A. Another issue that can arise is managing changes to the wiki. For wikis managed in git, one can face pull
 requests containing changes across a variety of different topics. This may become overwhelming to
 manage / moderate.
 
