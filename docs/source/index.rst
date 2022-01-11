@@ -22,6 +22,7 @@ Links to Individual Wikis
 
 *   `GitWiki <https://gitwiki.readthedocs.io/en/latest/>`_
 *   `TkinterWiki <https://tkinterwiki.readthedocs.io/en/latest/>`_
+*   `GameDevelopmentWiki <https://gamedevelopmentwiki.readthedocs.io/en/latest/>`_
 
 ..  toctree::
     :maxdepth: 2
