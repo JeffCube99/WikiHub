@@ -162,3 +162,70 @@ start making the project your own by doing the following:
 #.  Update the contents of ``docs/source/index.rst`` This is the homepage of your documentation.
 
 From this point the wiki is now your own. Start adding new ``.rst`` files of your own to ``docs/source``.
+
+Git LFS Support
+---------------
+
+At some point you may want to add images to your wiki and track those images using Git LFS. As of this writing
+(1/22/2022) Read the Docs does not support Git LFS [0]_. However we can work around this by following the steps
+below:
+
+..  note::
+
+    The workaround below combines 2 methods from [1]_ and [2]_.
+
+#.  Install `Git LFS <https://git-lfs.github.com/>`_ on your local machine. You can start tracking file types
+    like so:
+
+    ..  code-block:: bash
+
+        git lfs track "*.png"
+        git lfs track "*.jpg"
+
+    Commit any changes you make like the tracking information added to ``.gitattributes``
+#.  [Optional] Use `git lfs migrate <https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.1.ronn?utm_source=gitlfs_site&utm_medium=doc_man_migrate_link&utm_campaign=gitlfs>`_
+    to convert files on other branches or in your prior commit history to Git LFS.
+
+#.  Inside ``docs/source/conf.py`` add the following lines:
+
+    ..  code-block:: python
+
+        ###################### Fetching images stored through GitLFS ######################
+        import os
+
+        # If runs on ReadTheDocs environment
+        on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+        # Hack for lacking git-lfs support ReadTheDocs
+        if on_rtd:
+            if not os.path.exists('./git-lfs'):
+                os.system('wget https://github.com/git-lfs/git-lfs/releases/download/v2.7.1/git-lfs-linux-amd64-v2.7.1.tar.gz')
+                os.system('tar xvfz git-lfs-linux-amd64-v2.7.1.tar.gz')
+                os.system('./git-lfs install')  # make lfs available in current repository
+                os.system('./git-lfs fetch')  # download content from remote
+                os.system('./git-lfs checkout')  # make local files to have the real content on them
+
+        ####################################################################################
+
+#.  After applying the above changes, you may find that your documentation is not displaying images tracked by
+    Git LFS properly.
+    When hosting your wiki, Read the Docs seems to move any images it detects inside a directory named ``/_images/``.
+    Git LFS interferes with this detection and move process so we must do this manually.
+    We accomplish this by moving all images into the directory ``docs/source/_images/``.
+    Next we replace ``..  image::`` references like:
+
+    ..  code-block:: rst
+
+        ..  image:: /images/pycharm_git_widget.png
+
+    to:
+
+    ..  code-block:: rst
+
+        ..  image:: /_images/pycharm_git_widget.png
+
+
+
+..  [0] https://github.com/readthedocs/readthedocs.org/issues/1846
+..  [1] https://github.com/readthedocs/readthedocs.org/issues/1846#issuecomment-278286430
+..  [2] https://github.com/readthedocs/readthedocs.org/issues/1846#issuecomment-477184259

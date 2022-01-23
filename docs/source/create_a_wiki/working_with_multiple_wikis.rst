@@ -94,7 +94,7 @@ found the following workflow to work for me:
 *   With the project setup you can now manage the branches of your wikis using the git widget
     at the bottom of the pycharm window:
 
-    ..  image:: /images/pycharm_git_widget.png
+    ..  image:: /_images/pycharm_git_widget.png
 
 *   Changes made to files appear within the **Local Changes** tab which is visible when clicking on the Git tab at the
     bottom of the pycharm window. By default any new changes appear in the active changelist which is named the **Default
@@ -103,7 +103,7 @@ found the following workflow to work for me:
     you can then drag it and drop it to one of the wiki changelists you have created. You can see an example of
     this organization below:
 
-    ..  image:: /images/pycharm_organized_changelists.png
+    ..  image:: /_images/pycharm_organized_changelists.png
 
 *   When committing changes using PyCharm's version control window, select the changelist you want to commit before
     clicking the commit button (that looks like a green chechmark). When reviewing the commit make that it contains only
