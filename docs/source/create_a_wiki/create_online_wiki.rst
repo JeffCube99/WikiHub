@@ -207,9 +207,8 @@ below:
 
         ####################################################################################
 
-#.  You may find that after these changes your documentation may be building but images, now
-    stored on Git LFS, are not displaying.
-    This may be caused because Read the Docs stores images in a particular way and this process
+#.  After applying the above changes, you may find that your documentation is not displaying images tracked by
+    Git LFS properly. This may be because Read the Docs stores images in a particular way and this process
     is broken when switching over to Git LFS. Lets say you were referencing images in your documentation
     in the manner below:
 
@@ -217,9 +216,10 @@ below:
 
         ..  image:: /images/pycharm_git_widget.png
 
-    When hosting your wiki, Read the Docs expects images to be inside a ``/_images/`` directory and seems to move
-    any images it detects to that directory. Since Git LFS inteferes with this detection we must be sure to do
-    this manually. We must move all images under ``docs/source/_images/`` and replace references to ones like so:
+    When hosting your wiki, Read the Docs seems to move any images it detects inside a directory named ``/_images/``.
+    Git LFS interferes with this detection and move process so we must do this manually.
+    We accomplish this by moveing all images into the directory ``docs/source/_images/``.
+    Next we replace ``..  image::`` references like the one above to:
 
     ..  code-block:: rst
 
