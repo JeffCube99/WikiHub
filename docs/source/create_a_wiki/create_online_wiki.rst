@@ -139,10 +139,6 @@ start making the project your own by doing the following:
     can refer to the Read the Docs `Folder Structure <https://sphinx-rtd-tutorial.readthedocs.io/en/latest/folders.html>`_
     pages on how to structure your repository for documentation and your python project.
 #.  Update the README.rst file
-#.  Add a new directory ``_static`` to ``docs/source``. This file is specified inside ``docs/source/conf.py`` and can
-    be used to hold custom static files. To learn more about the static directory visit sphinx's documentation on
-    the `html_static_path option <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_static_path>`_
-    for the ``conf.py`` file
 #.  Inside ``pyproject.toml``, Update the project name and authors.
 #.  Inside the ``docs/source/`` folder, remove ``api.rst`` and ``usage.rst`` since those
     files were part of the template documentation.
