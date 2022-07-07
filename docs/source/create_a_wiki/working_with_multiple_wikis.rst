@@ -68,6 +68,14 @@ found the following workflow to work for me:
             #.  Select your python version (For this example we will use ``3.8``)
             #.  Click the **Create** button to create your project.
 
+        ..  group-tab:: Mac
+
+            #.  With PyCharm open select **File > New Project...**
+            #.  Choose your project location. (e.g. ``C:\PycharmProjects\test_wiki``)
+            #.  Under **Python Interpreter** create a new environment using Conda
+            #.  Select your python version (For this example we will use ``3.8``)
+            #.  Click the **Create** button to create your project.
+
 *   Once the project is created select the terminal emulator at the bottom of the PyCharm window.
     From the terminal run the followng:
 
@@ -80,7 +88,7 @@ found the following workflow to work for me:
         # (If you contribute to the wikis under a different name and email)
         $ cd WikiHub
         $ git config --local user.name "JeffCube99"
-        $ git config --local user.email jeffcube99@gmail.com
+        $ git config --local user.email myemail@gmail.com
         $ cd ..
 
         # Install Sphinx.
