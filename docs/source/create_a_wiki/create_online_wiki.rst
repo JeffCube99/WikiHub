@@ -129,7 +129,7 @@ Make the Template Your Own
         $ git config --local user.name "JeffCube99"
 
         # set local git user email
-        $ git config --local user.email jeffcube99@gmail.com
+        $ git config --local user.email myemail@gmail.com
 
 If you have followed the above instructions and built the documentation from the
 `Read The Docs GitHub template <https://github.com/astrojuanlu/tutorial-template/>`_ you can follow these steps to
