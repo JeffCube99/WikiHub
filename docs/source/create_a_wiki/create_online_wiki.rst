@@ -25,7 +25,7 @@ Test Read The Docs by Loading a Demo Project
 
 ..  note::
 
-    The following example only has you create a demo project using a `template repository <https://github.com/readthedocs/template.git>`_.
+    The following example only has you create a demo project using a `template repository <https://github.com/readthedocs/tutorial-template>`_.
     You do not own the template repository, so you cannot make edits to it. If you want to start
     your own documentation see :ref:`Create Your Online Wiki From A Template`.
 
@@ -44,7 +44,7 @@ Create Your Online Wiki From A Template
 =======================================
 
 If you have not created your own documentation, you can begin by using the template provided by Read The Docs. This
-section is based of the `Getting Started <https://docs.readthedocs.io/en/stable/tutorial/index.html#getting-started>`_
+section is based of the `Getting Started <https://docs.readthedocs.io/en/stable/tutorial/#getting-started>`_
 section from the Read The Docs tutorial documentation.
 
 Starting Your Repository From A Template
