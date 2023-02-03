@@ -91,15 +91,79 @@ from the terminal or by using `PyCharm <https://www.jetbrains.com/pycharm/>`_:
 
                 ..  group-tab:: Terminal
 
-                    ..  error::
+                    ..  code-block:: bash
 
-                        No Documentation Avaliable Yet
+                        # Create and navigate to a directory that will house your wiki
+                        $ mkdir wiki_test
+                        $ cd wiki_test
+
+                        # Create a new conda environment
+                        $ conda create --name wiki_test python=3.8
+
+                        # Activate the conda environment you just created
+                        $ conda activate wiki_test
+
+                        # Install Sphinx
+                        $ conda install sphinx
+
+                    ..  note::
+
+                            When installing packages conda will ask for your permission you to proceed
+                            (``Proceed ([y]/n)?``). To continue just type ``y``
+
+                    ..  code-block:: bash
+
+                        # Initialize a default sphinx project by running the command ``sphinx-quickstart``
+                        # Follow the instructions in the command prompt. You can accept all of the defaults
+                        # (displayed to you within brackets) but you still have to specify Project and Author names.
+                        $ sphinx-quickstart
+
+                        # Build HTML docs inside the newly created ``_build`` directory.
+                        $ make html
+
+                    *   From this point you can navigate to ``_build/html/index.html`` and open index.html in your browser of choice to see
+                        your newly created documentation.
+
+                    ..  note::
+
+                        You can quickly open up the current working folder in terminal within Finder by using
+                        the command:
+
+                        ..  code-block:: bash
+
+                            $ open ..
+
+                    *   You can now start writing documentation inside of your base directory (``wiki_test``).
 
                 ..  group-tab:: PyCharm
 
-                    ..  error::
+                    /Users/jeffreyspitz/PycharmProjects/wiki_test
 
-                        No Documentation Avaliable Yet
+                    #.  With PyCharm open select **File > New Project...**
+                    #.  Choose your project location. (e.g. ``/Users/user0/PycharmProjects/test_wiki``)
+                    #.  Under **Python Interpreter** create a new environment using Conda
+                    #.  Select your python version (For this example we will use ``3.8``)
+                    #.  Click the **Create** button to create your project.
+                    #.  Select the terminal emulator at the bottom of the PyCharm window. From the terminal run the followng:
+
+                    ..  code-block:: bash
+
+                        # Install Sphinx.
+                        # During this process conda will ask for your permission you to proceed (``Proceed ([y]/n)?``).
+                        # To continue just type ``y``
+                        $ conda install sphinx
+
+                        # Initialize a default sphinx project by running the command ``sphinx-quickstart``
+                        # Follow the instructions in the command prompt. You can accept all of the defaults
+                        # (displayed to you within brackets) but you still have to specify Project and Author names.
+                        $ sphinx-quickstart
+
+                        # Build HTML docs inside the newly created ``_build`` directory.
+                        $ make html
+
+                    *   From this point you can navigate to ``_build/html/index.html`` and open index.html
+                        from PyCharm or in your browser to view your newly created documentation.
+                    *   You can now start writing documentation inside of your base directory (``wiki_test``).
 
 .. _Viewing A Local Wiki:
 
@@ -171,12 +235,32 @@ below:
 
             ..  group-tab:: Terminal
 
-                ..  error::
+                    ..  code-block:: bash
 
-                    No Documentation Avaliable Yet
+                        # Navigate to your documentation's root directory
+                        $ cd wiki_test
+
+                        # Start a local HTTP server
+                        # The terminal will then display a message like "Serving HTTP on :: port 8000"
+                        $ python -m http.server
+
+
+                    ..  note::
+
+                        When running the http.server command, A popup may appear asking you to enable some permissions.
+                        Acceptthe permissions for the command to continue execution.
+
+                    *   From this point you can open your browser to `http://localhost:8000/ <http://localhost:8000/>`_.
+                    *   In the browser you can navigate to ``_build/html/``. From there you can open up your
+                        documentation html pages.
 
             ..  group-tab:: PyCharm
 
-                ..  error::
+                    To learn more check out `PyCharms built-in HTML preview <https://www.jetbrains.com/help/pycharm/editing-html-files.html#ws_html_preview_output_built_in_browser>`_
 
-                    No Documentation Avaliable Yet
+                    *   Open a ``.html`` file built by your project directory (e.g. ``test_wiki/_build/html/index.html``)
+                    *   Move your mouse inside the file window. In the upper left hand part of the window you
+                        should be able to see icons for different browsers. Select a browser of your choice
+                        and pycharm will open the page for you in the browser.
+                    *   Alternatively you can select **View > Open in Browser** and select the browser
+                        of your choice.
