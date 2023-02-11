@@ -97,8 +97,8 @@ Once the project is created, you will need to update its configurations:
             # Install sphinx. If you have a conda environment simply run the following
             $ conda install sphinx
 
-            # If you are using the default sphinx_rtd_theme install it
-            $ conda install sphinx_rtd_theme
+            # If you are using the default sphinx_rtd_theme install it.
+            $ conda install -c conda-forge --override-channels sphinx_rtd_theme
 
             # Navigate to your docs folder
             $ cd docs
@@ -114,6 +114,15 @@ Once the project is created, you will need to update its configurations:
         If bullets are not rendering in your locally generated document you may need to install docutils by running
         ``conda install docutils=0.16`` from the terminal
         (`Link to Stack Overflow Issue <https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file>`_).
+
+    ..  note::
+
+        We have had issues with the search function not working in locally generated document when using sphinx_rtd_theme.
+        From experience installing the theme using the command ``$ conda install sphinx_rtd_theme`` sometimes gave us
+        an out of date version of sphinx_rtd_theme that has a documented history of search issues.
+        As of 2022 the command ``$ conda install -c conda-forge --override-channels sphinx_rtd_theme`` ensures the download
+        of an an updated version of sphinx_rtd_theme through conda-forge.
+
 
 Make the Template Your Own
 --------------------------
