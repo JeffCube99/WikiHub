@@ -50,7 +50,7 @@ section from the Read The Docs tutorial documentation.
 Starting Your Repository From A Template
 ----------------------------------------
 
-#.  Go to the `Read The Docs GitHub template <https://github.com/astrojuanlu/tutorial-template/>`_.
+#.  Go to the `Read The Docs GitHub template <https://github.com/readthedocs/tutorial-template/>`_.
 #.  While signed into GitHub, click the **Use this template** button.
 #.  Give the repository a name.
 #.  Set it's visibility to **Public**
